@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма обратной связи</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <button class="show-modal-window">Написать</button>
+  <section class="modal hidden">
+    <h2 class="section-title">Стать партнёром проекта</h2>
+    <form class="form">
+      <div class="flex-decoration">
+        <div class="form__input-box form__input-box_image">
+          <label class="form__label form__label_decoration form__label_position" for="name-org">
+            Логотип (jpeg, png)</label>
+          <label class="form__choose-img">
+            <label class="icon-close"></label>
+            <div class="icon-bg"></div>
+            <span class="icon-choose">Выберите файл</span>
+            <input onchange="displayImage()" type="file" id="logo" accept="image/png, image/jpeg" />
+          </label>
+          <img class="form__choosen-img" src="img/man.png" alt="Изображение мужчины">
+        </div>
+
+        <div class="flex-decoration-left">
+          <div class="form__input-box form__input-box_decoration">
+            <label class="form__label form__label_decoration" for="name-org">
+              Название организации</label>
+            <input class="form__item" id="name-org" type="text" required>
+          </div>
+
+          <div class="form__input-box form__input-box_decoration">
+            <label class="form__label form__label_decoration" for="phone">
+              Телефон</label>
+            <input class="form__item" id="phone" type="tel" required>
+          </div>
+
+          <div class="form__input-box form__input-box_decoration">
+            <label class="form__label form__label_decoration" for="email">
+              E-mail</label>
+            <input class="form__item" id="email" type="email" required>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form__input-box form__input-box_decoration form__item_select-decor">
+        <label class="form__label form__label_decoration" for="direction">
+          Направление</label>
+        <select class="form__item" name="direction-select" id="direction" required>
+          <option value="">Выберите направление</option>
+          <option value="ecology">Экология</option>
+          <option value="pedagogy">Педагогика</option>
+          <option value="it">IT-специализация</option>
+        </select>
+      </div>
+
+      <div class="form__input-box form__input-box_decoration">
+        <input class="form__item form__item_without-label" id="site" type="text">
+        <span class="form__input-icon icon-site"></span>
+      </div>
+
+      <div class="form__input-box form__input-box_decoration">
+        <input class="form__item form__item_without-label" id="site" type="text">
+        <span class="form__input-icon icon-vk"></span>
+      </div>
+
+      <div class="form__input-box form__input-box_decoration">
+        <input class="form__item form__item_without-label" id="site" type="text">
+        <span class="form__input-icon icon-ok"></span>
+      </div>
+
+      <div class="form__input-box form__input-box_decoration">
+        <input class="form__item form__item_without-label" id="site" type="text">
+        <span class="form__input-icon icon-facebook"></span>
+      </div>
+
+      <div class="form__input-box form__input-box_decoration">
+        <input class="form__item form__item_without-label" id="site" type="text">
+        <span class="form__input-icon icon-instagram"></span>
+      </div>
+
+      <div class="form__input-box form__input-box_decoration">
+        <input class="form__item form__item_without-label" id="site" type="text">
+        <span class="form__input-icon icon-youtube"></span>
+      </div>
+
+      <div class="form__input-box form__input-box_decoration">
+        <label class="form__label" for="director">
+          Руководитель</label>
+        <input class="form__item" id="director" type="text">
+      </div>
+
+      <button class="form__button form__button-submit" type="submit">Стать партнёром проекта</button>
+    </form>
+    <button class="form__button form__button-cancel">Отменить</button>
+  </section>
+  <div class="overlay hidden"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
