@@ -6,28 +6,35 @@ function filterTable() {
 	let search = document
 		.getElementById('searchInput')
 		.value.toLowerCase()
-		.trim();
-	let rows = document.getElementById('table').getElementsByTagName('tr');
-	let column = document.getElementById('table').getElementsByTagName('th');
-	let content = 0;
+		.trim(),
+		rows = document.getElementById('table').getElementsByTagName('tr'),
+	  column = document.getElementById('table').getElementsByTagName('th'),
+		content = [];
 
 	// фильтр будет начинаться только после 3 и более введенных символов
 	if (search.length >= 3) {
 		for (let i = 1; i < rows.length; i++) {
+			let count = 0;
 			for (let j = 0; j < column.length; j++) {
 				content = rows[i].cells[j].textContent.toLowerCase();
-				rows[i].style.display = content.includes(search) ? '' : 'none';
+
+				if (content.includes(search)) {
+					rows[i].style.display = '';
+					count ++;
+				} else if (count < 1){
+					rows[i].style.display = 'none';
+				}
 			}
 		}
 		// если символы были стерты, то все возвращается как было
 	} else {
-		for (let i = 0; i < rows.length; i++) {
+		for (let i = 1; i < rows.length; i++) {
 			rows[i].style.display = '';
 		}
 	}
 }
 
-document.getElementById('searchInput').addEventListener('keyup', filterTable);
+document.getElementById('searchInput').addEventListener('input', filterTable);
 
 // функция сортировки таблицы (будет доступна через 1 секунду, т.к. необходимо
 // чтобы данные с сервера пришли на страницу)
