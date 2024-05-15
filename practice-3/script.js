@@ -6,13 +6,14 @@ function filterTable() {
 	let search = document
 		.getElementById('searchInput')
 		.value.toLowerCase()
-		.trim(),
+		.trimLeft(),
 		rows = document.getElementById('table').getElementsByTagName('tr'),
 	  column = document.getElementById('table').getElementsByTagName('th'),
 		content = [];
 
 	// фильтр будет начинаться только после 3 и более введенных символов
 	if (search.length >= 3) {
+	
 		for (let i = 1; i < rows.length; i++) {
 			let count = 0;
 			for (let j = 0; j < column.length; j++) {
@@ -32,9 +33,12 @@ function filterTable() {
 			rows[i].style.display = '';
 		}
 	}
+	console.log(search.length);
 }
 
-document.getElementById('searchInput').addEventListener('input', filterTable);
+document.getElementById('searchInput').addEventListener('keyup', filterTable);
+
+console.log(('ea').length);
 
 // функция сортировки таблицы (будет доступна через 1 секунду, т.к. необходимо
 // чтобы данные с сервера пришли на страницу)
