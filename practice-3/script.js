@@ -8,7 +8,7 @@ function filterTable() {
 		.value.toLowerCase()
 		.trimLeft(),
 		rows = document.getElementById('table').getElementsByTagName('tr'),
-	  column = document.getElementById('table').getElementsByTagName('th'),
+	  	column = document.getElementById('table').getElementsByTagName('th'),
 		content = [];
 
 	// фильтр будет начинаться только после 3 и более введенных символов
@@ -36,8 +36,6 @@ function filterTable() {
 }
 
 document.getElementById('searchInput').addEventListener('keyup', filterTable);
-
-console.log(('ea').length);
 
 // функция сортировки таблицы (будет доступна через 1 секунду, т.к. необходимо
 // чтобы данные с сервера пришли на страницу)
