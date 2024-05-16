@@ -33,7 +33,6 @@ function filterTable() {
 			rows[i].style.display = '';
 		}
 	}
-	console.log(search.length);
 }
 
 document.getElementById('searchInput').addEventListener('keyup', filterTable);
